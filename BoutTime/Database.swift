@@ -9,23 +9,21 @@
 import Foundation
 
 struct HistoricEvent {
-    let year: Int
-    let month: Int
+    let yearMonthYYYYMM: Int
     let fact: String
-    var usedThisQuizlet: Bool
-    
     }
 
-let myBirthday = HistoricEvent(year: 1983, month: 7, fact: "I was born", usedThisQuizlet: false)
+let myBirthday = HistoricEvent(yearMonthYYYYMM: 198307, fact: "José was born")
 
-let mcpBirthday = HistoricEvent(year: 1981, month: 6, fact: "Maria was born", usedThisQuizlet: false)
+let mcpBirthday = HistoricEvent(yearMonthYYYYMM: 198106, fact: "Maria was born")
 
-let joshBirthday = HistoricEvent(year: 1983, month: 7, fact: "Josh was born", usedThisQuizlet: false)
+let joshBirthday = HistoricEvent(yearMonthYYYYMM: 198308, fact: "Josh was born")
 
-let mamiBirthday = HistoricEvent(year: 1950, month: 4, fact: "Mami was born", usedThisQuizlet: false)
+let mamiBirthday = HistoricEvent(yearMonthYYYYMM: 195004, fact: "Mami was born")
 
-let papiBirthday = HistoricEvent(year: 1953, month: 3, fact: "Papi was born", usedThisQuizlet: false)
+let papiBirthday = HistoricEvent(yearMonthYYYYMM: 195303, fact: "Papi was born")
 
-let chuppiesBirthday = HistoricEvent(year: 2008, month: 1, fact: "Chuppies was born", usedThisQuizlet: false)
+let chuppiesBirthday = HistoricEvent(yearMonthYYYYMM: 200801, fact: "Chuppies was born")
 
 let masterDatabase: [HistoricEvent] = [myBirthday, mcpBirthday, joshBirthday, mamiBirthday, papiBirthday, chuppiesBirthday]
+

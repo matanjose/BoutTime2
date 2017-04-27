@@ -13,6 +13,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let newQuizlet = generateQuizlet()
+        var quizletCorrectlyOrdered = checkQuizletOrder(newQuizlet)
+        
+        print(newQuizlet)
+        print("\(quizletCorrectlyOrdered)")
+        
+        let sampleCorrectQuizlet = [mamiBirthday, papiBirthday, mcpBirthday, myBirthday]
+        quizletCorrectlyOrdered = checkQuizletOrder(sampleCorrectQuizlet)
+        
+        print(sampleCorrectQuizlet)
+        print("\(quizletCorrectlyOrdered)")
     }
 
     override func didReceiveMemoryWarning() {
