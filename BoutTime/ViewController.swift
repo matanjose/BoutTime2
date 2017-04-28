@@ -10,28 +10,58 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var labelOne: UILabel!
+    @IBOutlet weak var labelTwo: UILabel!
+    @IBOutlet weak var labelThree: UILabel!
+    @IBOutlet weak var labelFour: UILabel!
+    
+    var quizlet: [HistoricEvent] = []
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        displayQuizlet()
         
-        let newQuizlet = generateQuizlet()
-        var quizletCorrectlyOrdered = checkQuizletOrder(newQuizlet)
         
-        print(newQuizlet)
-        print("\(quizletCorrectlyOrdered)")
-        
-        let sampleCorrectQuizlet = [mamiBirthday, papiBirthday, mcpBirthday, myBirthday]
-        quizletCorrectlyOrdered = checkQuizletOrder(sampleCorrectQuizlet)
-        
-        print(sampleCorrectQuizlet)
-        print("\(quizletCorrectlyOrdered)")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func displayQuizlet() {
+        //Establish a fresh quizlet array
+        
+        quizlet = generateQuizlet()
+        var eventOne = quizlet[0]
+        var eventTwo = quizlet[1]
+        var eventThree = quizlet[2]
+        var eventFour = quizlet[3]
+        
+        
+        //Displaying the quizlet
+        labelOne.text = eventOne.fact
+        labelTwo.text = eventTwo.fact
+        labelThree.text = eventThree.fact
+        labelFour.text = eventFour.fact
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }
 

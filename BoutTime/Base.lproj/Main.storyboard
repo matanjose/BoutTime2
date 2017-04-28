@@ -214,6 +214,12 @@
                             <constraint firstAttribute="bottom" secondItem="2C9-4K-YuC" secondAttribute="bottom" constant="200" id="tCw-ts-oTx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="labelFour" destination="PJW-KJ-bGO" id="UrR-5G-2CG"/>
+                        <outlet property="labelOne" destination="MET-d9-UyP" id="eri-mB-GIG"/>
+                        <outlet property="labelThree" destination="YOK-x3-6HP" id="ddD-wq-5jb"/>
+                        <outlet property="labelTwo" destination="7sD-e7-DjO" id="rhe-Lw-QP6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
