@@ -8,12 +8,28 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+enum Buttons {
+    case downButton1
+    case downButton2
+    case downButton3
+}
 
+
+
+class ViewController: UIViewController {
+    //Buttons and Labels are numbered from top to bottom as displayed on UI
     @IBOutlet weak var labelOne: UILabel!
     @IBOutlet weak var labelTwo: UILabel!
     @IBOutlet weak var labelThree: UILabel!
     @IBOutlet weak var labelFour: UILabel!
+    
+    @IBOutlet weak var downButton1: UIButton!
+    
+    @IBOutlet weak var downButton2: UIButton!
+    
+    @IBOutlet weak var downButton3: UIButton!
+    
+    
     
     var quizlet: [HistoricEvent] = []
     
@@ -23,7 +39,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //displayQuizlet()
-       
+       displayQuizlet()
         
         
     }
@@ -33,15 +49,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*func displayQuizlet() {
+    func displayQuizlet() {
         //Establish a fresh quizlet array
-     
+        resetQuizlet()
+        generateQuizlet()
         
-        quizlet = generateQuizlet()
-        var eventOne = quizlet[0]
-        var eventTwo = quizlet[1]
-        var eventThree = quizlet[2]
-        var eventFour = quizlet[3]
+        //assigning Historic Events to Variable
+        var eventOne = quizletList[0]
+        var eventTwo = quizletList[1]
+        var eventThree = quizletList[2]
+        var eventFour = quizletList[3]
         
         
         //Displaying the quizlet
@@ -51,8 +68,18 @@ class ViewController: UIViewController {
         labelFour.text = eventFour.fact
         
     }
- */
+ 
     
+    @IBAction func downButton(_ sender: UIButton) {
+        switch sender {
+        case downButton1: print(labelOne.text!)
+        case downButton2: print(labelTwo.text!)
+        case downButton3: print(labelThree.text!)
+        default:
+            print("Oh my...")
+        }
+        
+    }
     
     
     

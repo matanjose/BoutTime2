@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +40,11 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="VFc-a1-jeY"/>
                                                 </constraints>
-                                                <state key="normal" image="down_full.png"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                                <state key="normal" title="down1" image="down_full.png"/>
+                                                <connections>
+                                                    <action selector="downButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ljj-aR-Cgg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -78,7 +82,10 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="0CT-D4-TSq"/>
                                                         </constraints>
-                                                        <state key="normal" image="down_half.png"/>
+                                                        <state key="normal" title="down2" image="down_half.png"/>
+                                                        <connections>
+                                                            <action selector="downButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WcO-w0-c6X"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -130,7 +137,10 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="cpF-Nq-bdA"/>
                                                         </constraints>
-                                                        <state key="normal" image="down_half.png"/>
+                                                        <state key="normal" title="down3" image="down_half.png"/>
+                                                        <connections>
+                                                            <action selector="downButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EE2-FE-LNX"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -215,6 +225,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="downButton1" destination="CcJ-KW-Znt" id="shn-dw-nSc"/>
+                        <outlet property="downButton2" destination="Vuj-BT-dA9" id="umB-P6-6SM"/>
+                        <outlet property="downButton3" destination="4PA-rl-PyF" id="pTe-ZE-uhK"/>
                         <outlet property="labelFour" destination="PJW-KJ-bGO" id="UrR-5G-2CG"/>
                         <outlet property="labelOne" destination="MET-d9-UyP" id="eri-mB-GIG"/>
                         <outlet property="labelThree" destination="YOK-x3-6HP" id="ddD-wq-5jb"/>
@@ -223,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+            <point key="canvasLocation" x="-458" y="99"/>
         </scene>
     </scenes>
     <resources>

@@ -29,6 +29,7 @@ func generateQuizlet() {
     }
     
     randomQuestionSet.removeAll()
+    print(quizletList)
 }
 
 
