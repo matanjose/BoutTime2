@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum Buttons {
-    case downButton1
-    case downButton2
-    case downButton3
-}
 
 
 
@@ -32,14 +27,16 @@ class ViewController: UIViewController {
     
     
     var quizlet: [HistoricEvent] = []
-    
+    var initialIndex: Int = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //displayQuizlet()
-       displayQuizlet()
+        resetQuizlet()
+        generateQuizlet()
+        displayQuizlet()
         
         
     }
@@ -50,10 +47,6 @@ class ViewController: UIViewController {
     }
     
     func displayQuizlet() {
-        //Establish a fresh quizlet array
-        resetQuizlet()
-        generateQuizlet()
-        
         //assigning Historic Events to Variable
         var eventOne = quizletList[0]
         var eventTwo = quizletList[1]
@@ -66,18 +59,21 @@ class ViewController: UIViewController {
         labelTwo.text = eventTwo.fact
         labelThree.text = eventThree.fact
         labelFour.text = eventFour.fact
-        
     }
- 
+
     
     @IBAction func downButton(_ sender: UIButton) {
+        var index = initialIndex
         switch sender {
-        case downButton1: print(labelOne.text!)
-        case downButton2: print(labelTwo.text!)
-        case downButton3: print(labelThree.text!)
+        case downButton1: index = 0
+        case downButton2: index = 1
+        case downButton3: index = 2
         default:
             print("Oh my...")
         }
+        
+        moveItemDownOne(from: index)
+        displayQuizlet()
         
     }
     

@@ -39,6 +39,14 @@ func resetQuizlet() {
     quizletList.removeAll()
 }
 
+func moveItemDownOne(from initialIndex: Int) {
+    let sourceIndex = initialIndex
+    let targetIndex = initialIndex + 1
+    
+    let itemToMove = quizletList.remove(at: sourceIndex)
+    quizletList.insert(itemToMove, at: targetIndex)
+}
+
 
 
 //Old Code
