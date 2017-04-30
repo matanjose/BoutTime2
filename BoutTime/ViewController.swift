@@ -22,7 +22,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        displayQuizlet()
+        //displayQuizlet()
+       
         
         
     }
@@ -32,8 +33,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func displayQuizlet() {
+    /*func displayQuizlet() {
         //Establish a fresh quizlet array
+     
         
         quizlet = generateQuizlet()
         var eventOne = quizlet[0]
@@ -49,6 +51,7 @@ class ViewController: UIViewController {
         labelFour.text = eventFour.fact
         
     }
+ */
     
     
     

@@ -8,22 +8,28 @@
 
 import Foundation
 
-struct HistoricEvent {
-    let yearMonthYYYYMM: Int
+struct HistoricEvent: Hashable, Equatable{
+    let yearMonthDayYYYYMMDD: Int
     let fact: String
+    var hashValue: Int {return yearMonthDayYYYYMMDD}
+    
+    
+   static func ==(lhs: HistoricEvent, rhs: HistoricEvent) ->Bool {
+        return lhs.fact == rhs.fact && lhs.yearMonthDayYYYYMMDD == rhs.yearMonthDayYYYYMMDD
     }
+}
 
-let myBirthday = HistoricEvent(yearMonthYYYYMM: 198307, fact: "José was born")
+let myBirthday = HistoricEvent(yearMonthDayYYYYMMDD: 19830702, fact: "José was born")
 
-let mcpBirthday = HistoricEvent(yearMonthYYYYMM: 198106, fact: "Maria was born")
+let mcpBirthday = HistoricEvent(yearMonthDayYYYYMMDD: 19810609, fact: "Maria was born")
 
-let joshBirthday = HistoricEvent(yearMonthYYYYMM: 198308, fact: "Josh was born")
+let joshBirthday = HistoricEvent(yearMonthDayYYYYMMDD: 19830813, fact: "Josh was born")
 
-let mamiBirthday = HistoricEvent(yearMonthYYYYMM: 195004, fact: "Mami was born")
+let mamiBirthday = HistoricEvent(yearMonthDayYYYYMMDD: 19500417, fact: "Mami was born")
 
-let papiBirthday = HistoricEvent(yearMonthYYYYMM: 195303, fact: "Papi was born")
+let papiBirthday = HistoricEvent(yearMonthDayYYYYMMDD: 19530321, fact: "Papi was born")
 
-let chuppiesBirthday = HistoricEvent(yearMonthYYYYMM: 200801, fact: "Chuppies was born")
+let chuppiesBirthday = HistoricEvent(yearMonthDayYYYYMMDD: 20080101, fact: "Chuppies was born")
 
 let masterDatabase: [HistoricEvent] = [myBirthday, mcpBirthday, joshBirthday, mamiBirthday, papiBirthday, chuppiesBirthday]
 
