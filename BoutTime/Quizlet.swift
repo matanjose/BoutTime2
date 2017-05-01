@@ -9,7 +9,7 @@ import GameKit
 
 var quizletList = [HistoricEvent]()
 
-//Get new
+///Get new quizlet 
 func generateQuizlet() {
     
     var randomQuestionSet = Set<HistoricEvent>()
@@ -32,12 +32,13 @@ func generateQuizlet() {
     print(quizletList)
 }
 
-
-
+///Creates an empty Quizlet to be filled again
 func resetQuizlet() {
     
     quizletList.removeAll()
 }
+
+
 
 func moveItemDownOne(from initialIndex: Int) {
     let sourceIndex = initialIndex
@@ -78,19 +79,5 @@ func resetQuizlet() -> [HistoricEvent] {
     return quizlet
 }
 
-func checkQuizletOrder(_ quizlet: [HistoricEvent]) -> Bool {
-    
-    let referenceOne = quizlet[0].yearMonthYYYYMM
-    let referenceTwo = quizlet[1].yearMonthYYYYMM
-    let referenceThree = quizlet[2].yearMonthYYYYMM
-    let referenceFour = quizlet[3].yearMonthYYYYMM
-    
-    
-    if referenceOne < referenceTwo && referenceTwo < referenceThree && referenceThree < referenceFour {
-        return true
-    } else {
-        return false
-    }
-}
 */
 
