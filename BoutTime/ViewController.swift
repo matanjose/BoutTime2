@@ -27,7 +27,16 @@ class ViewController: UIViewController {
     
     var quizlet: [HistoricEvent] = []
     
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
     
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            checkForCorrectEventOrder()
+            print(itemsAreCorrectlyOrdered)
+        }
+    }
     
     
     override func viewDidLoad() {
