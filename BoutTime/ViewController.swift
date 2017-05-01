@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+var itemsAreCorrectlyOrdered: Bool = false
 
 
 
@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -36,6 +37,9 @@ class ViewController: UIViewController {
         resetQuizlet()
         generateQuizlet()
         displayQuizlet()
+        checkForCorrectEventOrder()
+        print(itemsAreCorrectlyOrdered)
+        
         
         
     }
@@ -58,7 +62,8 @@ class ViewController: UIViewController {
         labelTwo.text = eventTwo.fact
         labelThree.text = eventThree.fact
         labelFour.text = eventFour.fact
-    }
+        
+        }
 
     
     @IBAction func moveItem(_ sender: UIButton) {
@@ -74,6 +79,7 @@ class ViewController: UIViewController {
         }
         
         displayQuizlet()
+        checkForCorrectEventOrder()
         
     }
     
