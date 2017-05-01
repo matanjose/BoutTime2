@@ -53,19 +53,7 @@ func moveItemUpOne(from initialIndex: Int) {
     quizletList.insert(itemToMove, at: targetIndex)
 }
 
-///check to see if items in quizlet are correctly ordered
-func checkForCorrectEventOrder() {
-    let firstItem = quizletList[0]
-    let secondItem = quizletList[1]
-    let thirdItem = quizletList[2]
-    let fourthItem = quizletList[3]
-    
-    if (firstItem.indexDate < secondItem.indexDate && secondItem.indexDate < thirdItem.indexDate && thirdItem.indexDate < fourthItem.indexDate) {
-        itemsAreCorrectlyOrdered = true
-    } else {
-        itemsAreCorrectlyOrdered = false
-    }
-}
+
 
 //Old Code
 /*

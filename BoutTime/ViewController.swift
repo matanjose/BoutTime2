@@ -9,6 +9,21 @@
 import UIKit
 var itemsAreCorrectlyOrdered: Bool = false
 
+enum CounterButtons {
+    case counter
+    case wrongAnswer
+    case rightAnswer
+}
+
+enum Instructions {
+    case shake
+    case moreInfo
+    case blank
+}
+
+
+
+
 
 
 class ViewController: UIViewController {
@@ -30,6 +45,7 @@ class ViewController: UIViewController {
     
     
     var quizlet: [HistoricEvent] = []
+    var roundCounter = 0
     
     override func becomeFirstResponder() -> Bool {
         return true
@@ -38,7 +54,7 @@ class ViewController: UIViewController {
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             checkForCorrectEventOrder()
-            print(itemsAreCorrectlyOrdered)
+            
         }
     }
     
@@ -46,16 +62,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //displayQuizlet()
-        resetQuizlet()
-        generateQuizlet()
-        displayQuizlet()
-        countdownLabel.isHidden = true
-        failNextRoundButton.isHidden = false
-        correctNextRoundButton.isHidden = true
         
-        
-        
+        startNewGame()
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,15 +101,56 @@ class ViewController: UIViewController {
         }
         
         displayQuizlet()
-        checkForCorrectEventOrder()
+        
         
     }
     
     @IBAction func nextRound() {
+        beginNextRound()
     }
     
+    func changeCounterDisplayTo(_ displayItem: CounterButtons) {
+        switch displayItem {
+        case .counter: countdownLabel.isHidden = false; failNextRoundButton.isHidden = true; correctNextRoundButton.isHidden = true; changeInstructionsTo(.shake)
+        case .rightAnswer: countdownLabel.isHidden = true; failNextRoundButton.isHidden = true; correctNextRoundButton.isHidden = false; changeInstructionsTo(.blank)
+        case .wrongAnswer: countdownLabel.isHidden = true; correctNextRoundButton.isHidden = true; failNextRoundButton.isHidden = false; changeInstructionsTo(.blank)
+        }
+    }
     
-    
+    func changeInstructionsTo(_ instructions: Instructions) {
+        switch instructions {
+        case .shake: instructionLabel.text = "Shake to complete"
+        case .blank: instructionLabel.text = ""
+        case .moreInfo: instructionLabel.text = "Tap events to learn more"
+        }
+    }
+
+    ///check to see if items in quizlet are correctly ordered
+    func checkForCorrectEventOrder() {
+        let firstItem = quizletList[0]
+        let secondItem = quizletList[1]
+        let thirdItem = quizletList[2]
+        let fourthItem = quizletList[3]
+        
+        if (firstItem.indexDate < secondItem.indexDate && secondItem.indexDate < thirdItem.indexDate && thirdItem.indexDate < fourthItem.indexDate) {
+            changeCounterDisplayTo(.rightAnswer)
+        } else {
+            changeCounterDisplayTo(.wrongAnswer)
+        }
+    }
+    func startNewGame() {
+        resetQuizlet()
+        generateQuizlet()
+        displayQuizlet()
+        changeCounterDisplayTo(.counter)
+    }
+    func beginNextRound() {
+        roundCounter += 1
+        resetQuizlet()
+        generateQuizlet()
+        displayQuizlet()
+        changeCounterDisplayTo(.counter)
+    }
     
     
     
