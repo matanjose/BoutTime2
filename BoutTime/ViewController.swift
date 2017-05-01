@@ -23,6 +23,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var upButton1: UIButton!
     @IBOutlet weak var upButton2: UIButton!
     @IBOutlet weak var upButton3: UIButton!
+    @IBOutlet weak var failNextRoundButton: UIButton!
+    @IBOutlet weak var correctNextRoundButton: UIButton!
+    @IBOutlet weak var countdownLabel: UILabel!
+    @IBOutlet weak var instructionLabel: UILabel!
     
     
     var quizlet: [HistoricEvent] = []
@@ -46,8 +50,9 @@ class ViewController: UIViewController {
         resetQuizlet()
         generateQuizlet()
         displayQuizlet()
-        checkForCorrectEventOrder()
-        print(itemsAreCorrectlyOrdered)
+        countdownLabel.isHidden = true
+        failNextRoundButton.isHidden = false
+        correctNextRoundButton.isHidden = true
         
         
         
@@ -92,6 +97,8 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func nextRound() {
+    }
     
     
     
