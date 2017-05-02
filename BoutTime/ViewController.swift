@@ -68,6 +68,11 @@ class ViewController: UIViewController {
     var correctAnswers: Int = 0
     var roundsPerGame: Int = 3
     
+    var lightningTimer = Timer()
+    let secondsPerRound = 5
+    var seconds = 0
+    var timerRunning = false
+    
     override func becomeFirstResponder() -> Bool {
         return true
     }
@@ -85,7 +90,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         showSplashScreen()
-        //  startNewGame()
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,6 +100,7 @@ class ViewController: UIViewController {
     //MARK: Game Display Functions
     func showSplashScreen() {
         setMainDisplayto(.splashScreen)
+        loadGameWithDelay(seconds: 3)
     }
     func setMainDisplayto(_ display: MainDisplay) {
         switch display {
@@ -185,6 +190,8 @@ class ViewController: UIViewController {
     
     ///check to see if items in quizlet are correctly ordered
     func checkForCorrectEventOrder() {
+        resetTimer()
+        
         let firstItem = quizletList[0]
         let secondItem = quizletList[1]
         let thirdItem = quizletList[2]
@@ -206,6 +213,8 @@ class ViewController: UIViewController {
         displayQuizlet()
         changeCounterDisplayTo(.counter)
         setMainDisplayto(.events)
+        resetTimer()
+        beginTimer()
     }
     
     func determineEndOfGame() {
@@ -221,6 +230,8 @@ class ViewController: UIViewController {
         generateQuizlet()
         displayQuizlet()
         changeCounterDisplayTo(.counter)
+        resetTimer()
+        beginTimer()
     }
     
     func endGame() {
@@ -259,7 +270,58 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: Helper Methods
+    func loadGameWithDelay(seconds: Int) {
+        // Converts a delay in seconds to nanoseconds as signed 64 bit integer
+        let delay = Int64(NSEC_PER_SEC * UInt64(seconds))
+        // Calculates a time value to execute the method given current time and delay
+        let dispatchTime = DispatchTime.now() + Double(delay) / Double(NSEC_PER_SEC)
+        
+        // Executes the nextRound method at the dispatch time on the main queue
+        DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
+            self.startNewGame()
+        }
+    }
     
+    //Timer Methods
+    
+    func beginTimer() {
+        
+        if timerRunning == false {
+            
+            lightningTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.countdownTimer), userInfo: nil, repeats: true)
+            
+            timerRunning = true
+        }
+    }
+    
+    func countdownTimer() {
+        
+        // countdown by 1 second
+        
+        seconds -= 1
+        
+        countdownLabel.text = "0:\(seconds)"
+        
+        if seconds == 0 {
+            
+            lightningTimer.invalidate()
+            checkForCorrectEventOrder()
+            
+        }
+        
+    }
+    
+    func resetTimer() {
+        
+        seconds = secondsPerRound
+        countdownLabel.text = "0:\(seconds)"
+        timerRunning = false
+        
+    }
+
+    
+
     
     
     
