@@ -28,11 +28,6 @@ enum MainDisplay {
     case splashScreen
 }
 
-
-
-
-
-
 class ViewController: UIViewController {
     //Buttons and Labels are numbered from top to bottom as displayed on UI
     @IBOutlet weak var labelOne: UILabel!
@@ -66,10 +61,10 @@ class ViewController: UIViewController {
     var quizlet: [HistoricEvent] = []
     var roundCounter: Int = 1
     var correctAnswers: Int = 0
-    var roundsPerGame: Int = 3
+    var roundsPerGame: Int = 2
     
     var lightningTimer = Timer()
-    let secondsPerRound = 5
+    let secondsPerRound = 11
     var seconds = 0
     var timerRunning = false
     
@@ -301,7 +296,7 @@ class ViewController: UIViewController {
         
         seconds -= 1
         
-        countdownLabel.text = "0:\(seconds)"
+        countdownLabel.text = "0:" + String(format: "%02d", seconds)
         
         if seconds == 0 {
             
@@ -315,7 +310,7 @@ class ViewController: UIViewController {
     func resetTimer() {
         
         seconds = secondsPerRound
-        countdownLabel.text = "0:\(seconds)"
+        countdownLabel.text = "0:" + String(format: "%02d", seconds)
         timerRunning = false
         
     }
