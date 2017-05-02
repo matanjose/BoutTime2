@@ -7,18 +7,24 @@
 //
 
 import UIKit
-var itemsAreCorrectlyOrdered: Bool = false
+
 
 enum CounterButtons {
     case counter
     case wrongAnswer
     case rightAnswer
+    case playAgain
 }
 
 enum Instructions {
     case shake
     case moreInfo
     case blank
+}
+
+enum MainDisplay {
+    case events
+    case finalScore
 }
 
 
@@ -40,12 +46,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var upButton3: UIButton!
     @IBOutlet weak var failNextRoundButton: UIButton!
     @IBOutlet weak var correctNextRoundButton: UIButton!
+    @IBOutlet weak var playAgainButton: UIButton!
     @IBOutlet weak var countdownLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
+    @IBOutlet weak var yourScore: UILabel!
+    @IBOutlet weak var finalScore: UILabel!
+    @IBOutlet weak var eventStack1: UIStackView!
+    @IBOutlet weak var eventStack2: UIStackView!
+    @IBOutlet weak var eventStack3: UIStackView!
+    @IBOutlet weak var eventStack4: UIStackView!
+    @IBOutlet weak var finalScoreStack: UIStackView!
     
     
     var quizlet: [HistoricEvent] = []
-    var roundCounter = 0
+    var roundCounter: Int = 1
+    var correctAnswers: Int = 0
+    var roundsPerGame: Int = 3
     
     override func becomeFirstResponder() -> Bool {
         return true
@@ -54,6 +70,7 @@ class ViewController: UIViewController {
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             checkForCorrectEventOrder()
+            
             
         }
     }
@@ -71,6 +88,24 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Game Display Functions
+    func setMainDisplayto(_ display: MainDisplay) {
+        switch display {
+        case .events:
+            eventStack1.isHidden = false
+            eventStack2.isHidden = false
+            eventStack3.isHidden = false
+            eventStack4.isHidden = false
+            finalScoreStack.isHidden = true
+        case .finalScore:
+            eventStack1.isHidden = true
+            eventStack2.isHidden = true
+            eventStack3.isHidden = true
+            eventStack4.isHidden = true
+            finalScoreStack.isHidden = false
+        }
+    }
+    
     func displayQuizlet() {
         //assigning Historic Events to Variable
         let eventOne = quizletList[0]
@@ -86,8 +121,96 @@ class ViewController: UIViewController {
         labelFour.text = eventFour.fact
         
         }
-
+    func changeCounterDisplayTo(_ displayItem: CounterButtons) {
+        
+        switch displayItem {
+            
+        case .counter:
+            countdownLabel.isHidden = false
+            failNextRoundButton.isHidden = true
+            correctNextRoundButton.isHidden = true
+            playAgainButton.isHidden = true
+            changeInstructionsTo(.shake)
+            
+        case .rightAnswer:
+            countdownLabel.isHidden = true
+            failNextRoundButton.isHidden = true
+            correctNextRoundButton.isHidden = false
+            playAgainButton.isHidden = true
+            changeInstructionsTo(.blank)
+            
+        case .wrongAnswer:
+            countdownLabel.isHidden = true
+            failNextRoundButton.isHidden = false
+            correctNextRoundButton.isHidden = true
+            playAgainButton.isHidden = true
+            changeInstructionsTo(.blank)
+            
+        case .playAgain:
+            countdownLabel.isHidden = true
+            failNextRoundButton.isHidden = true
+            correctNextRoundButton.isHidden = true
+            playAgainButton.isHidden = false
+            changeInstructionsTo(.blank)
+        }
+    }
     
+    func changeInstructionsTo(_ instructions: Instructions) {
+        switch instructions {
+        case .shake: instructionLabel.text = "Shake to complete"
+        case .blank: instructionLabel.text = ""
+        case .moreInfo: instructionLabel.text = "Tap events to learn more"
+        }
+    }
+    
+    ///check to see if items in quizlet are correctly ordered
+    func checkForCorrectEventOrder() {
+        let firstItem = quizletList[0]
+        let secondItem = quizletList[1]
+        let thirdItem = quizletList[2]
+        let fourthItem = quizletList[3]
+        
+        if (firstItem.indexDate < secondItem.indexDate && secondItem.indexDate < thirdItem.indexDate && thirdItem.indexDate < fourthItem.indexDate) {
+            changeCounterDisplayTo(.rightAnswer)
+            correctAnswers += 1
+        } else {
+            changeCounterDisplayTo(.wrongAnswer)
+        }
+    }
+
+    //MARK: Game flow functions
+    func startNewGame() {
+        roundCounter = 1
+        resetQuizlet()
+        generateQuizlet()
+        displayQuizlet()
+        changeCounterDisplayTo(.counter)
+        setMainDisplayto(.events)
+    }
+    
+    func determineEndOfGame() {
+        if roundCounter < roundsPerGame {
+            beginNextRound()
+        } else if roundCounter >= roundsPerGame{
+            endGame()
+        }
+    }
+    func beginNextRound() {
+        roundCounter += 1
+        resetQuizlet()
+        generateQuizlet()
+        displayQuizlet()
+        changeCounterDisplayTo(.counter)
+    }
+    
+    func endGame() {
+        setMainDisplayto(.finalScore)
+        changeCounterDisplayTo(.playAgain)
+        yourScore.text = "Your Score:"
+        finalScore.text = "\(correctAnswers) / \(roundsPerGame)"
+    }
+
+    //MARK: Action functions
     @IBAction func moveItem(_ sender: UIButton) {
         switch sender {
         case downButton1: moveItemDownOne(from: 0)
@@ -105,52 +228,20 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func nextRound() {
-        beginNextRound()
-    }
-    
-    func changeCounterDisplayTo(_ displayItem: CounterButtons) {
-        switch displayItem {
-        case .counter: countdownLabel.isHidden = false; failNextRoundButton.isHidden = true; correctNextRoundButton.isHidden = true; changeInstructionsTo(.shake)
-        case .rightAnswer: countdownLabel.isHidden = true; failNextRoundButton.isHidden = true; correctNextRoundButton.isHidden = false; changeInstructionsTo(.blank)
-        case .wrongAnswer: countdownLabel.isHidden = true; correctNextRoundButton.isHidden = true; failNextRoundButton.isHidden = false; changeInstructionsTo(.blank)
+   
+    @IBAction func continuePlay(_ sender: UIButton) {
+        switch sender {
+        case failNextRoundButton, correctNextRoundButton:
+            determineEndOfGame()
+        case playAgainButton:
+            startNewGame()
+        default: break
         }
     }
     
-    func changeInstructionsTo(_ instructions: Instructions) {
-        switch instructions {
-        case .shake: instructionLabel.text = "Shake to complete"
-        case .blank: instructionLabel.text = ""
-        case .moreInfo: instructionLabel.text = "Tap events to learn more"
-        }
-    }
-
-    ///check to see if items in quizlet are correctly ordered
-    func checkForCorrectEventOrder() {
-        let firstItem = quizletList[0]
-        let secondItem = quizletList[1]
-        let thirdItem = quizletList[2]
-        let fourthItem = quizletList[3]
-        
-        if (firstItem.indexDate < secondItem.indexDate && secondItem.indexDate < thirdItem.indexDate && thirdItem.indexDate < fourthItem.indexDate) {
-            changeCounterDisplayTo(.rightAnswer)
-        } else {
-            changeCounterDisplayTo(.wrongAnswer)
-        }
-    }
-    func startNewGame() {
-        resetQuizlet()
-        generateQuizlet()
-        displayQuizlet()
-        changeCounterDisplayTo(.counter)
-    }
-    func beginNextRound() {
-        roundCounter += 1
-        resetQuizlet()
-        generateQuizlet()
-        displayQuizlet()
-        changeCounterDisplayTo(.counter)
-    }
+    
+    
+    
     
     
     
