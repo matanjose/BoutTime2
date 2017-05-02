@@ -25,6 +25,7 @@ enum Instructions {
 enum MainDisplay {
     case events
     case finalScore
+    case splashScreen
 }
 
 
@@ -56,6 +57,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var eventStack3: UIStackView!
     @IBOutlet weak var eventStack4: UIStackView!
     @IBOutlet weak var finalScoreStack: UIStackView!
+    @IBOutlet weak var gameStack: UIStackView!
+    @IBOutlet weak var splashScreen: UIImageView!
+    
+    
     
     
     var quizlet: [HistoricEvent] = []
@@ -79,8 +84,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        startNewGame()
+        showSplashScreen()
+        //  startNewGame()
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,6 +94,9 @@ class ViewController: UIViewController {
     }
     
     //MARK: Game Display Functions
+    func showSplashScreen() {
+        setMainDisplayto(.splashScreen)
+    }
     func setMainDisplayto(_ display: MainDisplay) {
         switch display {
         case .events:
@@ -97,12 +105,24 @@ class ViewController: UIViewController {
             eventStack3.isHidden = false
             eventStack4.isHidden = false
             finalScoreStack.isHidden = true
+            gameStack.isHidden = false
+            splashScreen.isHidden = true
         case .finalScore:
             eventStack1.isHidden = true
             eventStack2.isHidden = true
             eventStack3.isHidden = true
             eventStack4.isHidden = true
             finalScoreStack.isHidden = false
+            gameStack.isHidden = false
+            splashScreen.isHidden = true
+        case .splashScreen:
+            eventStack1.isHidden = true
+            eventStack2.isHidden = true
+            eventStack3.isHidden = true
+            eventStack4.isHidden = true
+            finalScoreStack.isHidden = true
+            gameStack.isHidden = true
+            splashScreen.isHidden = false
         }
     }
     
