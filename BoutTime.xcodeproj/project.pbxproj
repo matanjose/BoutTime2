@@ -34,6 +34,7 @@
 		820320D91EB277B1000BC0E5 /* Quizlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820320D81EB277B1000BC0E5 /* Quizlet.swift */; };
 		820320DB1EB27828000BC0E5 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820320DA1EB27828000BC0E5 /* Database.swift */; };
 		8261E6311EBA576200A5E389 /* icon60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8261E6301EBA576200A5E389 /* icon60@3x.png */; };
+		8261E6331EBA852100A5E389 /* moreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261E6321EBA852100A5E389 /* moreInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		820320D81EB277B1000BC0E5 /* Quizlet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quizlet.swift; sourceTree = "<group>"; };
 		820320DA1EB27828000BC0E5 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		8261E6301EBA576200A5E389 /* icon60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon60@3x.png"; sourceTree = "<group>"; };
+		8261E6321EBA852100A5E389 /* moreInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = moreInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				820320C31EB27767000BC0E5 /* webview_bar.png */,
 				8203209E1EB27747000BC0E5 /* AppDelegate.swift */,
 				820320A01EB27747000BC0E5 /* ViewController.swift */,
+				8261E6321EBA852100A5E389 /* moreInfo.swift */,
 				820320D81EB277B1000BC0E5 /* Quizlet.swift */,
 				820320DA1EB27828000BC0E5 /* Database.swift */,
 				820320A21EB27747000BC0E5 /* Main.storyboard */,
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				820320D91EB277B1000BC0E5 /* Quizlet.swift in Sources */,
+				8261E6331EBA852100A5E389 /* moreInfo.swift in Sources */,
 				820320A11EB27747000BC0E5 /* ViewController.swift in Sources */,
 				820320DB1EB27828000BC0E5 /* Database.swift in Sources */,
 				8203209F1EB27747000BC0E5 /* AppDelegate.swift in Sources */,

@@ -50,18 +50,22 @@ enum MainDisplay {
 }
 
 enum tapGestureRecognizers {
-    case labelOneTGR
-    case labelTwoTGR
-    case labelThreeTGR
-    case labelFourTGR
+    case labelOne
+    case labelTwo
+    case labelThree
+    case labelFour
 }
 
 class ViewController: UIViewController {
     //Buttons and Labels are numbered from top to bottom as displayed on UI
-    @IBOutlet weak var labelOne: UILabel!
-    @IBOutlet weak var labelTwo: UILabel!
-    @IBOutlet weak var labelThree: UILabel!
-    @IBOutlet weak var labelFour: UILabel!
+    
+    
+    
+    
+    @IBOutlet weak var labelOne: UIButton!
+    @IBOutlet weak var labelTwo: UIButton!
+    @IBOutlet weak var labelThree: UIButton!
+    @IBOutlet weak var labelFour: UIButton!
     @IBOutlet weak var downButton1: UIButton!
     @IBOutlet weak var downButton2: UIButton!
     @IBOutlet weak var downButton3: UIButton!
@@ -95,6 +99,8 @@ class ViewController: UIViewController {
     var seconds = 0
     var timerRunning = false
     
+    
+    
     override func becomeFirstResponder() -> Bool {
         return true
     }
@@ -123,6 +129,23 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func setButtonTitleColor() {
+        let buttons = [labelOne, labelTwo, labelThree, labelFour]
+        for button in buttons {
+            button?.setTitleColor(#colorLiteral(red: 0.01774710789, green: 0.1580785215, blue: 0.2891573906, alpha: 1), for: .disabled)
+        }
+    }
+    func toggleButtonActivation(activeState: Bool) {
+        let buttons = [labelOne, labelTwo, labelThree, labelFour]
+        for button in buttons {
+            switch activeState {
+            case true: button?.isEnabled = true
+            case false: button?.isEnabled = false
+            }
+        }
+    }
+   
     
     
     //MARK: GAME DISPLAY FUNCTIONS
@@ -169,14 +192,14 @@ class ViewController: UIViewController {
             failNextRoundButton.isHidden = true
             correctNextRoundButton.isHidden = false
             playAgainButton.isHidden = true
-            changeInstructionsTo(.blank)
+            changeInstructionsTo(.moreInfo)
             
         case .wrongAnswer:
             countdownLabel.isHidden = true
             failNextRoundButton.isHidden = false
             correctNextRoundButton.isHidden = true
             playAgainButton.isHidden = true
-            changeInstructionsTo(.blank)
+            changeInstructionsTo(.moreInfo)
         }
     }
     
@@ -190,10 +213,10 @@ class ViewController: UIViewController {
         
         
         //Displaying the quizlet
-        labelOne.text = eventOne.fact
-        labelTwo.text = eventTwo.fact
-        labelThree.text = eventThree.fact
-        labelFour.text = eventFour.fact
+        labelOne.setTitle(eventOne.fact, for: .normal)
+        labelTwo.setTitle(eventTwo.fact, for: .normal)
+        labelThree.setTitle(eventThree.fact, for: .normal)
+        labelFour.setTitle(eventFour.fact, for: .normal)
         
         }
     
@@ -207,7 +230,7 @@ class ViewController: UIViewController {
     
     ///check to see if items in quizlet are correctly ordered
     func checkForCorrectEventOrder() {
-        
+        toggleButtonActivation(activeState: true)
         let firstItem = quizletList[0]
         let secondItem = quizletList[1]
         let thirdItem = quizletList[2]
@@ -231,18 +254,20 @@ class ViewController: UIViewController {
         displayQuizlet()
         changeCounterDisplayTo(.counter)
         setMainDisplayTo(.events)
+        setButtonTitleColor()
+        toggleButtonActivation(activeState: false)
         beginTimer()
     }
  
     func determineEndOfGame() {
         stopTimer()
-        
         if roundCounter < roundsPerGame {
             beginNextRound()
         } else if roundCounter >= roundsPerGame{
             endGame()
         }
     }
+    
     func beginNextRound() {
         stopTimer()
         resetTimer()
@@ -251,6 +276,7 @@ class ViewController: UIViewController {
         generateQuizlet()
         displayQuizlet()
         changeCounterDisplayTo(.counter)
+        toggleButtonActivation(activeState: false)
         beginTimer()
     }
     
@@ -261,6 +287,8 @@ class ViewController: UIViewController {
         finalScore.text = "\(correctAnswers) / \(roundsPerGame)"
         playAgainButton.isHidden = false
     }
+    
+    
 
     //MARK: Action functions
     @IBAction func moveItem(_ sender: UIButton) {
