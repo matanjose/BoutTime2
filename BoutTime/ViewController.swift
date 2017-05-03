@@ -59,10 +59,10 @@ class ViewController: UIViewController {
     var quizlet: [HistoricEvent] = []
     var roundCounter: Int = 1
     var correctAnswers: Int = 0
-    var roundsPerGame: Int = 2
+    var roundsPerGame: Int = 3
     
     var lightningTimer = Timer()
-    let secondsPerRound = 10
+    let secondsPerRound = 20
     var seconds = 0
     var timerRunning = false
     
@@ -72,8 +72,8 @@ class ViewController: UIViewController {
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            //         resetTimer()
-            //         checkForCorrectEventOrder()
+            resetTimer()
+            checkForCorrectEventOrder()
             
             
             
@@ -84,9 +84,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //  showSplashScreen()
-        setMainDisplayTo(.events)
-        changeCounterDisplayTo(.counter)
+        
+        showSplashScreen()
         
     }
 
@@ -117,60 +116,14 @@ class ViewController: UIViewController {
     }
     
     
-    ///During game play sets bottom display to correct buttons or timer 
-    ///and provides instructions for how to proceed
-    func changeCounterDisplayTo(_ displayItem: CounterButtons) {
-        
-        switch displayItem {
-            
-        case .counter:
-            countdownLabel.isHidden = false
-            failNextRoundButton.isHidden = true
-            correctNextRoundButton.isHidden = true
-            playAgainButton.isHidden = true
-            //       changeInstructionsTo(.shake)
-            
-        case .rightAnswer:
-            countdownLabel.isHidden = true
-            failNextRoundButton.isHidden = true
-            correctNextRoundButton.isHidden = false
-            playAgainButton.isHidden = true
-            //         changeInstructionsTo(.blank)
-            
-        case .wrongAnswer:
-            countdownLabel.isHidden = true
-            failNextRoundButton.isHidden = false
-            correctNextRoundButton.isHidden = true
-            playAgainButton.isHidden = true
-            //         changeInstructionsTo(.blank)
-        }
+    ///Shows the splashscreen for amount of time "seconds"
+    func showSplashScreen() {
+        setMainDisplayTo(.initialSplashScreen)
+        loadGameWithDelay(seconds: 3)
     }
-        
     
-    //MARK: Game Display Functions
-  /*     
-         ///Shows the splashscreen for amount of time "seconds"
-         func showSplashScreen() {
-         setMainDisplayTo(.initialSplashScreen)
-         loadGameWithDelay(seconds: 3)
-         }
-         
-         func displayQuizlet() {
-        //assigning Historic Events to Variable
-        let eventOne = quizletList[0]
-        let eventTwo = quizletList[1]
-        let eventThree = quizletList[2]
-        let eventFour = quizletList[3]
-        
-        
-        //Displaying the quizlet
-        labelOne.text = eventOne.fact
-        labelTwo.text = eventTwo.fact
-        labelThree.text = eventThree.fact
-        labelFour.text = eventFour.fact
-        
-        }
- 
+    ///During game play sets bottom display to correct buttons or timer
+    ///and provides instructions for how to proceed
     func changeCounterDisplayTo(_ displayItem: CounterButtons) {
         
         switch displayItem {
@@ -195,8 +148,25 @@ class ViewController: UIViewController {
             correctNextRoundButton.isHidden = true
             playAgainButton.isHidden = true
             changeInstructionsTo(.blank)
+        }
     }
+    
+         
+         func displayQuizlet() {
+        //assigning Historic Events to Variable
+        let eventOne = quizletList[0]
+        let eventTwo = quizletList[1]
+        let eventThree = quizletList[2]
+        let eventFour = quizletList[3]
         
+        
+        //Displaying the quizlet
+        labelOne.text = eventOne.fact
+        labelTwo.text = eventTwo.fact
+        labelThree.text = eventThree.fact
+        labelFour.text = eventFour.fact
+        
+        }
     
     func changeInstructionsTo(_ instructions: Instructions) {
         switch instructions {
@@ -224,17 +194,19 @@ class ViewController: UIViewController {
 
     //MARK: Game flow functions
        func startNewGame() {
+        resetTimer()
         roundCounter = 1
         resetQuizlet()
         generateQuizlet()
         displayQuizlet()
         changeCounterDisplayTo(.counter)
-        setMainDisplayto(.events)
-        resetTimer()
+        setMainDisplayTo(.events)
         beginTimer()
     }
  
     func determineEndOfGame() {
+        resetTimer()
+        
         if roundCounter < roundsPerGame {
             beginNextRound()
         } else if roundCounter >= roundsPerGame{
@@ -242,20 +214,21 @@ class ViewController: UIViewController {
         }
     }
     func beginNextRound() {
+        resetTimer()
         roundCounter += 1
         resetQuizlet()
         generateQuizlet()
         displayQuizlet()
         changeCounterDisplayTo(.counter)
-        resetTimer()
         beginTimer()
     }
     
     func endGame() {
-        setMainDisplayto(.finalScore)
-        changeCounterDisplayTo(.playAgain)
+        resetTimer()
+        setMainDisplayTo(.finalScore)
         yourScore.text = "Your Score:"
         finalScore.text = "\(correctAnswers) / \(roundsPerGame)"
+        playAgainButton.isHidden = false
     }
 
     //MARK: Action functions
@@ -286,7 +259,7 @@ class ViewController: UIViewController {
         default: break
         }
     }
-    
+
     //MARK: Helper Methods
     func loadGameWithDelay(seconds: Int) {
         // Converts a delay in seconds to nanoseconds as signed 64 bit integer
@@ -294,7 +267,7 @@ class ViewController: UIViewController {
         // Calculates a time value to execute the method given current time and delay
         let dispatchTime = DispatchTime.now() + Double(delay) / Double(NSEC_PER_SEC)
         
-        // Executes the nextRound method at the dispatch time on the main queue
+        // Executes the startNewGame method at the dispatch time on the main queue
         DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
             self.startNewGame()
         }
@@ -349,6 +322,6 @@ class ViewController: UIViewController {
     
     
     
-*/
+
 }
 
