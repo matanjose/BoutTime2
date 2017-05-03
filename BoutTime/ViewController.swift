@@ -6,6 +6,28 @@
 //  Copyright © 2017 Jose Portuondo-Dember. All rights reserved.
 //
 
+//FIXME:
+/*
+ (•) still needs to addressed
+ (X) tentatively addressed, confirm before final submission
+ -------------------
+ MEETS EXPECTATIONS
+ -------------------
+ (X) timer needs to work consistently
+ (X) long text in prompts getting cut off if too long
+ (•) descenders in instruction text get cut off
+ (•) create at least 40 events
+ (•) game consists of exactly six rounds
+ (•) each round is 60 seconds long
+ (•) rounded corners on left hand side of labels
+ 
+ ---------------------
+ EXCEEDS EXPECTATIONS
+ ---------------------
+ (•) Set up web browser
+ */
+
+
 import UIKit
 
 
@@ -318,22 +340,3 @@ class ViewController: UIViewController {
 
 }
 
-//FIXME:
-/*
- (•) still needs to addressed
- (X) tentatively addressed, confirm before final submission
--------------------
- MEETS EXPECTATIONS
--------------------
-(X) timer needs to work consistently
-(•) long text in prompts getting cut off if too long
-(•) descenders in instruction text get cut off
-(•) create at least 40 events
-(•) game consists of exactly six rounds
-(•) each round is 60 seconds long
-
----------------------
- EXCEEDS EXPECTATIONS
----------------------
-(•) Set up web browser
-*/
