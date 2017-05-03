@@ -86,6 +86,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         //  showSplashScreen()
         setMainDisplayTo(.events)
+        changeCounterDisplayTo(.counter)
         
     }
 
@@ -93,6 +94,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    //MARK: GAME DISPLAY FUNCTIONS
     
     func setMainDisplayTo(_ show: MainDisplay) {
         switch show {
@@ -110,32 +115,47 @@ class ViewController: UIViewController {
             promptsStack.isHidden = false
         }
     }
-    //MARK: Game Display Functions
-  /* func showSplashScreen() {
-        splashScreen.isHidden = false
-        gameStack.isHidden = true
-        loadGameWithDelay(seconds: 3)
-    }
-    func setMainDisplayto(_ display: MainDisplay) {
-        splashScreen.isHidden = true
-        gameStack.isHidden = false
-        switch display {
-        case .events:
-            eventStack1.isHidden = false
-            eventStack2.isHidden = false
-            eventStack3.isHidden = false
-            eventStack4.isHidden = false
-            finalScoreStack.isHidden = true
-        case .finalScore:
-            eventStack1.isHidden = true
-            eventStack2.isHidden = true
-            eventStack3.isHidden = true
-            eventStack4.isHidden = true
-            finalScoreStack.isHidden = false
+    
+    
+    ///During game play sets bottom display to correct buttons or timer 
+    ///and provides instructions for how to proceed
+    func changeCounterDisplayTo(_ displayItem: CounterButtons) {
+        
+        switch displayItem {
+            
+        case .counter:
+            countdownLabel.isHidden = false
+            failNextRoundButton.isHidden = true
+            correctNextRoundButton.isHidden = true
+            playAgainButton.isHidden = true
+            //       changeInstructionsTo(.shake)
+            
+        case .rightAnswer:
+            countdownLabel.isHidden = true
+            failNextRoundButton.isHidden = true
+            correctNextRoundButton.isHidden = false
+            playAgainButton.isHidden = true
+            //         changeInstructionsTo(.blank)
+            
+        case .wrongAnswer:
+            countdownLabel.isHidden = true
+            failNextRoundButton.isHidden = false
+            correctNextRoundButton.isHidden = true
+            playAgainButton.isHidden = true
+            //         changeInstructionsTo(.blank)
         }
     }
- 
-    func displayQuizlet() {
+        
+    
+    //MARK: Game Display Functions
+  /*     
+         ///Shows the splashscreen for amount of time "seconds"
+         func showSplashScreen() {
+         setMainDisplayTo(.initialSplashScreen)
+         loadGameWithDelay(seconds: 3)
+         }
+         
+         func displayQuizlet() {
         //assigning Historic Events to Variable
         let eventOne = quizletList[0]
         let eventTwo = quizletList[1]
