@@ -194,6 +194,7 @@ class ViewController: UIViewController {
 
     //MARK: Game flow functions
        func startNewGame() {
+        stopTimer()
         resetTimer()
         roundCounter = 1
         resetQuizlet()
@@ -205,7 +206,7 @@ class ViewController: UIViewController {
     }
  
     func determineEndOfGame() {
-        resetTimer()
+        stopTimer()
         
         if roundCounter < roundsPerGame {
             beginNextRound()
@@ -214,6 +215,7 @@ class ViewController: UIViewController {
         }
     }
     func beginNextRound() {
+        stopTimer()
         resetTimer()
         roundCounter += 1
         resetQuizlet()
@@ -224,7 +226,7 @@ class ViewController: UIViewController {
     }
     
     func endGame() {
-        resetTimer()
+        stopTimer()
         setMainDisplayTo(.finalScore)
         yourScore.text = "Your Score:"
         finalScore.text = "\(correctAnswers) / \(roundsPerGame)"
@@ -285,6 +287,10 @@ class ViewController: UIViewController {
         }
     }
     
+    func stopTimer() {
+        lightningTimer.invalidate()
+    }
+    
     func countdownTimer() {
         
         // countdown by 1 second
@@ -295,7 +301,7 @@ class ViewController: UIViewController {
         
         if seconds == 0 {
             
-            lightningTimer.invalidate()
+            stopTimer()
             checkForCorrectEventOrder()
             
         }
@@ -310,18 +316,24 @@ class ViewController: UIViewController {
         
     }
 
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }
 
+//FIXME:
+/*
+ (•) still needs to addressed
+ (X) tentatively addressed, confirm before final submission
+-------------------
+ MEETS EXPECTATIONS
+-------------------
+(X) timer needs to work consistently
+(•) long text in prompts getting cut off if too long
+(•) descenders in instruction text get cut off
+(•) create at least 40 events
+(•) game consists of exactly six rounds
+(•) each round is 60 seconds long
+
+---------------------
+ EXCEEDS EXPECTATIONS
+---------------------
+(•) Set up web browser
+*/
