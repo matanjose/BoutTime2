@@ -13,7 +13,6 @@ enum CounterButtons {
     case counter
     case wrongAnswer
     case rightAnswer
-    case playAgain
 }
 
 enum Instructions {
@@ -25,7 +24,7 @@ enum Instructions {
 enum MainDisplay {
     case events
     case finalScore
-    case splashScreen
+    case initialSplashScreen
 }
 
 class ViewController: UIViewController {
@@ -52,9 +51,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var eventStack3: UIStackView!
     @IBOutlet weak var eventStack4: UIStackView!
     @IBOutlet weak var finalScoreStack: UIStackView!
-    @IBOutlet weak var gameStack: UIStackView!
-    @IBOutlet weak var splashScreen: UIImageView!
-    
+    @IBOutlet weak var promptsStack: UIStackView!
+    @IBOutlet weak var splashscreen: UIImageView!
     
     
     
@@ -64,7 +62,7 @@ class ViewController: UIViewController {
     var roundsPerGame: Int = 2
     
     var lightningTimer = Timer()
-    let secondsPerRound = 11
+    let secondsPerRound = 10
     var seconds = 0
     var timerRunning = false
     
@@ -74,7 +72,9 @@ class ViewController: UIViewController {
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            checkForCorrectEventOrder()
+            //         resetTimer()
+            //         checkForCorrectEventOrder()
+            
             
             
         }
@@ -84,7 +84,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        showSplashScreen()
+        //  showSplashScreen()
+        setMainDisplayTo(.events)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,12 +94,31 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setMainDisplayTo(_ show: MainDisplay) {
+        switch show {
+        case .initialSplashScreen:
+            splashscreen.isHidden = false
+            finalScoreStack.isHidden = true
+            promptsStack.isHidden = true
+        case .finalScore:
+            splashscreen.isHidden = true
+            finalScoreStack.isHidden = false
+            promptsStack.isHidden = true
+        case .events:
+            splashscreen.isHidden = true
+            finalScoreStack.isHidden = true
+            promptsStack.isHidden = false
+        }
+    }
     //MARK: Game Display Functions
-    func showSplashScreen() {
-        setMainDisplayto(.splashScreen)
+  /* func showSplashScreen() {
+        splashScreen.isHidden = false
+        gameStack.isHidden = true
         loadGameWithDelay(seconds: 3)
     }
     func setMainDisplayto(_ display: MainDisplay) {
+        splashScreen.isHidden = true
+        gameStack.isHidden = false
         switch display {
         case .events:
             eventStack1.isHidden = false
@@ -105,27 +126,15 @@ class ViewController: UIViewController {
             eventStack3.isHidden = false
             eventStack4.isHidden = false
             finalScoreStack.isHidden = true
-            gameStack.isHidden = false
-            splashScreen.isHidden = true
         case .finalScore:
             eventStack1.isHidden = true
             eventStack2.isHidden = true
             eventStack3.isHidden = true
             eventStack4.isHidden = true
             finalScoreStack.isHidden = false
-            gameStack.isHidden = false
-            splashScreen.isHidden = true
-        case .splashScreen:
-            eventStack1.isHidden = true
-            eventStack2.isHidden = true
-            eventStack3.isHidden = true
-            eventStack4.isHidden = true
-            finalScoreStack.isHidden = true
-            gameStack.isHidden = true
-            splashScreen.isHidden = false
         }
     }
-    
+ 
     func displayQuizlet() {
         //assigning Historic Events to Variable
         let eventOne = quizletList[0]
@@ -141,6 +150,7 @@ class ViewController: UIViewController {
         labelFour.text = eventFour.fact
         
         }
+ 
     func changeCounterDisplayTo(_ displayItem: CounterButtons) {
         
         switch displayItem {
@@ -165,15 +175,8 @@ class ViewController: UIViewController {
             correctNextRoundButton.isHidden = true
             playAgainButton.isHidden = true
             changeInstructionsTo(.blank)
-            
-        case .playAgain:
-            countdownLabel.isHidden = true
-            failNextRoundButton.isHidden = true
-            correctNextRoundButton.isHidden = true
-            playAgainButton.isHidden = false
-            changeInstructionsTo(.blank)
-        }
     }
+        
     
     func changeInstructionsTo(_ instructions: Instructions) {
         switch instructions {
@@ -185,7 +188,6 @@ class ViewController: UIViewController {
     
     ///check to see if items in quizlet are correctly ordered
     func checkForCorrectEventOrder() {
-        resetTimer()
         
         let firstItem = quizletList[0]
         let secondItem = quizletList[1]
@@ -201,7 +203,7 @@ class ViewController: UIViewController {
     }
 
     //MARK: Game flow functions
-    func startNewGame() {
+       func startNewGame() {
         roundCounter = 1
         resetQuizlet()
         generateQuizlet()
@@ -211,7 +213,7 @@ class ViewController: UIViewController {
         resetTimer()
         beginTimer()
     }
-    
+ 
     func determineEndOfGame() {
         if roundCounter < roundsPerGame {
             beginNextRound()
@@ -327,6 +329,6 @@ class ViewController: UIViewController {
     
     
     
-
+*/
 }
 
