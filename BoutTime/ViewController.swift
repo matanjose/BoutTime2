@@ -49,6 +49,13 @@ enum MainDisplay {
     case initialSplashScreen
 }
 
+enum tapGestureRecognizers {
+    case labelOneTGR
+    case labelTwoTGR
+    case labelThreeTGR
+    case labelFourTGR
+}
+
 class ViewController: UIViewController {
     //Buttons and Labels are numbered from top to bottom as displayed on UI
     @IBOutlet weak var labelOne: UILabel!

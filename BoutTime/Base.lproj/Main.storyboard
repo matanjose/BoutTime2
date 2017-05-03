@@ -37,9 +37,13 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Birthday" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MET-d9-UyP">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="142.66666666666666"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <gestureRecognizers/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                 <color key="textColor" red="0.017747107893228531" green="0.15807852149009705" blue="0.28915739059448242" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="O1q-OQ-x33" appends="YES" id="Vdw-Ql-Q9n"/>
+                                                                </connections>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcJ-KW-Znt">
                                                                 <rect key="frame" x="50" y="0.0" width="50" height="142.66666666666666"/>
@@ -68,9 +72,13 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maria's Birthday" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sD-e7-DjO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="143.00000000000003"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <gestureRecognizers/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                 <color key="textColor" red="0.017747107889999999" green="0.15807852150000001" blue="0.28915739060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="lyc-RD-SRi" appends="YES" id="BII-w5-FTD"/>
+                                                                </connections>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wa4-8j-98L">
                                                                 <rect key="frame" x="50" y="0.0" width="50" height="143.00000000000003"/>
@@ -124,9 +132,13 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Papi's Birthday" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOK-x3-6HP">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="142.66666666666663"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <gestureRecognizers/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                 <color key="textColor" red="0.017747107889999999" green="0.15807852150000001" blue="0.28915739060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="6Ri-Ud-HTh" appends="YES" id="oax-vm-UL2"/>
+                                                                </connections>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Jx6-7S-YEE">
                                                                 <rect key="frame" x="50" y="0.0" width="50" height="142.66666666666663"/>
@@ -182,9 +194,13 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Papi's Birthday" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJW-KJ-bGO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="142.66666666666669"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <gestureRecognizers/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                 <color key="textColor" red="0.017747107889999999" green="0.15807852150000001" blue="0.28915739060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="Kid-ev-JOe" appends="YES" id="zlb-32-pDC"/>
+                                                                </connections>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aM-Dz-KFo">
                                                                 <rect key="frame" x="50" y="0.0" width="50" height="142.66666666666669"/>
@@ -358,6 +374,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="O1q-OQ-x33" userLabel="labelOneTGR">
+                    <connections>
+                        <segue destination="LG0-RK-iRO" kind="presentation" id="Hp1-qj-Fp4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="lyc-RD-SRi" userLabel="labelTwoTGR">
+                    <connections>
+                        <segue destination="LG0-RK-iRO" kind="presentation" id="1vX-g9-S3S"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="6Ri-Ud-HTh" userLabel="labelThreeTGR">
+                    <connections>
+                        <segue destination="LG0-RK-iRO" kind="presentation" id="VeK-Qz-7CF"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Kid-ev-JOe" userLabel="labelFourTGR">
+                    <connections>
+                        <segue destination="LG0-RK-iRO" kind="presentation" id="Vs2-0K-dQf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-80" y="-196"/>
         </scene>
@@ -413,4 +449,7 @@
         <image name="up_half.png" width="158" height="229"/>
         <image name="webview_bar.png" width="1333" height="167"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Vs2-0K-dQf"/>
+    </inferredMetricsTieBreakers>
 </document>
