@@ -15,6 +15,7 @@ class MIButton4ViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        loadWebsite()
     }
 
     override func didReceiveMemoryWarning() {
