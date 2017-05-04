@@ -19,8 +19,9 @@ class moreInfo: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        
+        loadWebsite()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,8 +34,21 @@ class moreInfo: UIViewController {
     }
 
     func loadWebsite() {
-      guard let url = URL(string: "http://www.apple.com") else { return }
-        moreInfoDisplay.loadRequest(URLRequest(url: url))
+        let url = URL(string: "https://www.google.com")
+        if let unwrappedURL = url {
+            let request = URLRequest(url: unwrappedURL)
+            let session = URLSession.shared
+            
+            let task = session.dataTask(with: request) { (data, response, error) in
+                if error == nil {
+                    self.moreInfoDisplay.loadRequest(request)
+                } else {
+                    print("ERROR: \(error))")
+                }
+            }
+            
+            task.resume()
+        }
     }
    
     
