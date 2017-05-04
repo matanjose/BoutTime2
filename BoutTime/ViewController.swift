@@ -16,7 +16,7 @@
  (X) timer needs to work consistently
  (X) long text in prompts getting cut off if too long
  (X) descenders in instruction text get cut off
- (•) create at least 40 events
+ (X) create at least 40 events
  (X) game consists of exactly six rounds
  (X) each round is 60 seconds long
  (X) add success and failure sounds
