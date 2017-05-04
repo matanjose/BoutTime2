@@ -40,6 +40,9 @@
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                 <color key="tintColor" red="0.021077785640954971" green="0.15815523266792297" blue="0.28917583823204041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button:MyBirthday"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="&quot;8px&quot;"/>
+                                                                </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="getMoreInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gU1-yD-Eyg"/>
                                                                     <segue destination="MW4-gX-NKC" kind="presentation" id="cLH-DO-Fcy"/>

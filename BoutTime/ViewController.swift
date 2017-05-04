@@ -19,7 +19,6 @@
  (•) create at least 40 events
  (X) game consists of exactly six rounds
  (X) each round is 60 seconds long
- (•) rounded corners on left hand side of labels
  (•) add success and failure sounds
  
  ---------------------
@@ -30,6 +29,7 @@
 
 
 import UIKit
+import AudioToolbox
 
 
 enum CounterButtons {
@@ -56,6 +56,8 @@ enum tapGestureRecognizers {
     case labelThree
     case labelFour
 }
+
+
 
 class ViewController: UIViewController {
     //Buttons and Labels are numbered from top to bottom as displayed on UI
@@ -100,6 +102,9 @@ class ViewController: UIViewController {
     let secondsPerRound = 60
     var seconds = 0
     var timerRunning = false
+    
+    var correctDing: SystemSoundID = 0
+    var incorrectDing: SystemSoundID = 0
     
     
     
@@ -240,16 +245,21 @@ class ViewController: UIViewController {
         
         if (firstItem.indexDate < secondItem.indexDate && secondItem.indexDate < thirdItem.indexDate && thirdItem.indexDate < fourthItem.indexDate) {
             changeCounterDisplayTo(.rightAnswer)
+            playCorrectSound()
             correctAnswers += 1
         } else {
             changeCounterDisplayTo(.wrongAnswer)
+            playincorrectSound()
         }
     }
 
     //MARK: Game flow functions
        func startNewGame() {
+        
         stopTimer()
         resetTimer()
+        loadCorrectSound()
+        loadIncorrectSound()
         roundCounter = 1
         resetQuizlet()
         generateQuizlet()
@@ -259,6 +269,7 @@ class ViewController: UIViewController {
         setButtonTitleColor()
         toggleButtonActivation(activeState: false)
         beginTimer()
+        
     }
  
     func determineEndOfGame() {
@@ -394,5 +405,30 @@ class ViewController: UIViewController {
         
     }
 
+    
+    
+    func loadCorrectSound() {
+        let pathToSoundFile = Bundle.main.path(forResource: "CorrectDing", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &correctDing)
+    }
+    
+    func playCorrectSound() {
+        AudioServicesPlaySystemSound(correctDing)
+    }
+    
+    func loadIncorrectSound() {
+        let pathToSoundFile = Bundle.main.path(forResource: "IncorrectBuzz", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &incorrectDing)
+    }
+    
+    func playincorrectSound() {
+        AudioServicesPlaySystemSound(incorrectDing)
+    }
+
+    
+    
 }
+
 

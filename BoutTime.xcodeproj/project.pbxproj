@@ -39,6 +39,8 @@
 		8261E6551EBADFE100A5E389 /* MIButton2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261E6541EBADFE100A5E389 /* MIButton2ViewController.swift */; };
 		8261E6571EBADFF900A5E389 /* MIButton3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261E6561EBADFF900A5E389 /* MIButton3ViewController.swift */; };
 		8261E6591EBAE00D00A5E389 /* MIButton4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261E6581EBAE00D00A5E389 /* MIButton4ViewController.swift */; };
+		8261E65B1EBAEDAA00A5E389 /* CorrectDing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8261E65A1EBAEDAA00A5E389 /* CorrectDing.wav */; };
+		8261E65D1EBAEDC000A5E389 /* IncorrectBuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8261E65C1EBAEDC000A5E389 /* IncorrectBuzz.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		8261E6541EBADFE100A5E389 /* MIButton2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIButton2ViewController.swift; sourceTree = "<group>"; };
 		8261E6561EBADFF900A5E389 /* MIButton3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIButton3ViewController.swift; sourceTree = "<group>"; };
 		8261E6581EBAE00D00A5E389 /* MIButton4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIButton4ViewController.swift; sourceTree = "<group>"; };
+		8261E65A1EBAEDAA00A5E389 /* CorrectDing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CorrectDing.wav; sourceTree = "<group>"; };
+		8261E65C1EBAEDC000A5E389 /* IncorrectBuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IncorrectBuzz.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,8 @@
 				820320D81EB277B1000BC0E5 /* Quizlet.swift */,
 				820320DA1EB27828000BC0E5 /* Database.swift */,
 				820320A21EB27747000BC0E5 /* Main.storyboard */,
+				8261E65C1EBAEDC000A5E389 /* IncorrectBuzz.wav */,
+				8261E65A1EBAEDAA00A5E389 /* CorrectDing.wav */,
 				8261E6521EBADFC200A5E389 /* MIButton1Controller.swift */,
 				8261E6541EBADFE100A5E389 /* MIButton2ViewController.swift */,
 				8261E6561EBADFF900A5E389 /* MIButton3ViewController.swift */,
@@ -206,12 +212,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				820320D51EB27767000BC0E5 /* up_half_selected.png in Resources */,
+				8261E65D1EBAEDC000A5E389 /* IncorrectBuzz.wav in Resources */,
 				820320D41EB27767000BC0E5 /* up_full.png in Resources */,
 				8261E6311EBA576200A5E389 /* icon60@3x.png in Resources */,
 				820320C71EB27767000BC0E5 /* down_half.png in Resources */,
 				820320D21EB27767000BC0E5 /* splash_screen.png in Resources */,
 				820320CD1EB27767000BC0E5 /* icon120@3x.png in Resources */,
 				820320C61EB27767000BC0E5 /* down_half_selected.png in Resources */,
+				8261E65B1EBAEDAA00A5E389 /* CorrectDing.wav in Resources */,
 				820320C91EB27767000BC0E5 /* icon40@1x.png in Resources */,
 				820320A61EB27747000BC0E5 /* Assets.xcassets in Resources */,
 				820320C51EB27767000BC0E5 /* down_full.png in Resources */,
