@@ -15,16 +15,17 @@
  -------------------
  (X) timer needs to work consistently
  (X) long text in prompts getting cut off if too long
- (•) descenders in instruction text get cut off
+ (X) descenders in instruction text get cut off
  (•) create at least 40 events
- (•) game consists of exactly six rounds
- (•) each round is 60 seconds long
+ (X) game consists of exactly six rounds
+ (X) each round is 60 seconds long
  (•) rounded corners on left hand side of labels
+ (•) add success and failure sounds
  
  ---------------------
  EXCEEDS EXPECTATIONS
  ---------------------
- (•) Set up web browser
+ (X) Set up web browser
  */
 
 
@@ -93,10 +94,10 @@ class ViewController: UIViewController {
     var eventUrl = String()
     var roundCounter: Int = 1
     var correctAnswers: Int = 0
-    var roundsPerGame: Int = 3
+    var roundsPerGame: Int = 6
     
     var lightningTimer = Timer()
-    let secondsPerRound = 20
+    let secondsPerRound = 60
     var seconds = 0
     var timerRunning = false
     
