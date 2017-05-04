@@ -114,6 +114,7 @@ class ViewController: UIViewController {
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
+            stopTimer()
             resetTimer()
             checkForCorrectEventOrder()
             
@@ -220,10 +221,15 @@ class ViewController: UIViewController {
         
         
         //Displaying the quizlet
-        labelOne.setTitle(eventOne.fact, for: .normal)
-        labelTwo.setTitle(eventTwo.fact, for: .normal)
-        labelThree.setTitle(eventThree.fact, for: .normal)
-        labelFour.setTitle(eventFour.fact, for: .normal)
+        labelOne.setTitle(eventOne.fact, for: .disabled)
+        labelTwo.setTitle(eventTwo.fact, for: .disabled)
+        labelThree.setTitle(eventThree.fact, for: .disabled)
+        labelFour.setTitle(eventFour.fact, for: .disabled)
+        
+        labelOne.setTitle("\(eventOne.fact) \n#: \(eventOne.presidentNumber)", for: .normal)
+        labelTwo.setTitle("\(eventTwo.fact) \n#: \(eventTwo.presidentNumber)", for: .normal)
+        labelThree.setTitle("\(eventThree.fact) \n#: \(eventThree.presidentNumber)", for: .normal)
+        labelFour.setTitle("\(eventFour.fact) \n#: \(eventFour.presidentNumber)", for: .normal)
         
         }
     
