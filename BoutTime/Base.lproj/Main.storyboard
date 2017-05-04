@@ -404,6 +404,9 @@
                             <constraint firstAttribute="trailing" secondItem="TWo-41-EKQ" secondAttribute="trailing" id="uBz-cH-F6Z"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="moreInfoDisplay" destination="ebw-ja-hxn" id="oRi-GN-HOk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yk-rA-ogH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

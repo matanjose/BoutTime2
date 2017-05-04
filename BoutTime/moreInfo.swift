@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import WebKit
+
+
+
 
 class moreInfo: UIViewController {
 
+    @IBOutlet weak var moreInfoDisplay: UIWebView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -25,6 +32,13 @@ class moreInfo: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    func loadWebsite() {
+      guard let url = URL(string: "http://www.apple.com") else { return }
+        moreInfoDisplay.loadRequest(URLRequest(url: url))
+    }
+   
+    
+    
     /*
     // MARK: - Navigation
 
