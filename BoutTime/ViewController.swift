@@ -90,6 +90,7 @@ class ViewController: UIViewController {
     
     
     var quizlet: [HistoricEvent] = []
+    var eventUrl = String()
     var roundCounter: Int = 1
     var correctAnswers: Int = 0
     var roundsPerGame: Int = 3
@@ -318,6 +319,25 @@ class ViewController: UIViewController {
         default: break
         }
     }
+    
+    @IBAction func getMoreInfo(_ sender: UIButton) {
+        var event : HistoricEvent
+        switch sender {
+        case labelOne: event = quizletList[0]
+            eventUrl = event.moreInfoURL
+        case labelTwo: event = quizletList[1]
+            eventUrl = event.moreInfoURL
+        case labelThree: event = quizletList[2]
+            eventUrl = event.moreInfoURL
+        case labelFour:  event = quizletList[3]
+        eventUrl = event.moreInfoURL
+            
+        default:
+            break
+        }
+        
+    }
+    
 
     //MARK: Helper Methods
     func loadGameWithDelay(seconds: Int) {

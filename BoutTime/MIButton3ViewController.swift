@@ -1,26 +1,20 @@
 //
-//  moreInfo.swift
+//  MIButton3ViewController.swift
 //  BoutTime
 //
-//  Created by Jose Portuondo-Dember on 5/3/17.
+//  Created by Jose Portuondo-Dember on 5/4/17.
 //  Copyright © 2017 Jose Portuondo-Dember. All rights reserved.
 //
 
 import UIKit
 
+class MIButton3ViewController: UIViewController {
 
-
-
-
-class moreInfo: UIViewController {
-
-    @IBOutlet weak var moreInfoDisplay: UIWebView!
-    
-    
+    @IBOutlet weak var moreInfo3: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
-        
         loadWebsite()
     }
 
@@ -29,27 +23,21 @@ class moreInfo: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func dismiss(_ sender: Any) {
+    @IBAction func dismiss() {
         dismiss(animated: true, completion: nil)
     }
 
-    
-    
-    
-    
-    
-    
     func loadWebsite() {
-        //quizletList
+        let event = quizletList[2]
         
-        let url = URL(string: "https://www.google.com")
+        let url = URL(string: event.moreInfoURL)
         if let unwrappedURL = url {
             let request = URLRequest(url: unwrappedURL)
             let session = URLSession.shared
             
             let task = session.dataTask(with: request) { (data, response, error) in
                 if error == nil {
-                    self.moreInfoDisplay.loadRequest(request)
+                    self.moreInfo3.loadRequest(request)
                 } else {
                     print("ERROR: \(String(describing: error)))")
                 }
@@ -58,8 +46,6 @@ class moreInfo: UIViewController {
             task.resume()
         }
     }
-   
-    
     
     /*
     // MARK: - Navigation

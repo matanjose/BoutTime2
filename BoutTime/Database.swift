@@ -15,28 +15,30 @@ struct HistoricEvent: Hashable, Equatable{
     let month: Int
     let year: Int
     let fact: String
+    let moreInfoURL: String
     var hashValue: Int {return year ^ month ^ day}
-    var indexDate: (Int, Int, Int) {return (year, month, day)}
+    var indexDate: (Int, Int, Int) {return (year, month, day)
+    }
     
     
    static func ==(lhs: HistoricEvent, rhs: HistoricEvent) ->Bool {
-        return lhs.fact == rhs.fact && lhs.day == rhs.day && lhs.month == rhs.month && lhs.year == rhs.year && lhs.hashValue == rhs.hashValue
+        return lhs.fact == rhs.fact && lhs.day == rhs.day && lhs.month == rhs.month && lhs.year == rhs.year && lhs.moreInfoURL == rhs.moreInfoURL && lhs.hashValue == rhs.hashValue && lhs.indexDate == rhs.indexDate
     }
 }
 
 let masterDatabase: [HistoricEvent] = [myBirthday, mcpBirthday, joshBirthday, mamiBirthday, papiBirthday, chuppiesBirthday]
 
-let myBirthday = HistoricEvent(day: 2, month: 7, year: 1983, fact: "José was born")
+let myBirthday = HistoricEvent(day: 2, month: 7, year: 1983, fact: "José was born", moreInfoURL: "https://www.google.com")
 
-let mcpBirthday = HistoricEvent(day: 9, month: 6, year: 1981, fact: "Maria Cristina was born")
+let mcpBirthday = HistoricEvent(day: 9, month: 6, year: 1981, fact: "Maria Cristina was born", moreInfoURL: "https://www.yahoo.com")
 
-let joshBirthday = HistoricEvent(day: 13, month: 8, year: 1983, fact: "Josh was born")
+let joshBirthday = HistoricEvent(day: 13, month: 8, year: 1983, fact: "Josh was born", moreInfoURL: "https://www.apple.com")
 
-let mamiBirthday = HistoricEvent(day: 17, month: 4, year: 1950, fact: "Mami was born")
+let mamiBirthday = HistoricEvent(day: 17, month: 4, year: 1950, fact: "Mami was born", moreInfoURL: "https://www.nytimes.com")
 
-let papiBirthday = HistoricEvent(day: 21, month: 3, year: 1953, fact: "Papi was born")
+let papiBirthday = HistoricEvent(day: 21, month: 3, year: 1953, fact: "Papi was born", moreInfoURL: "https://news.google.com")
 
-let chuppiesBirthday = HistoricEvent(day: 1, month: 1, year: 2008, fact: "Chuppies was born")
+let chuppiesBirthday = HistoricEvent(day: 1, month: 1, year: 2008, fact: "Chuppies was born", moreInfoURL: "https://www.wikipedia.org")
 /*
 let oneEvent = HistoricEvent(yearMonthDayYYYYMMDD: 1928, fact: "The discovery of penicillin.")
 

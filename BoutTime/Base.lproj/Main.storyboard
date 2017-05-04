@@ -41,7 +41,8 @@
                                                                 <color key="tintColor" red="0.021077785640954971" green="0.15815523266792297" blue="0.28917583823204041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button:MyBirthday"/>
                                                                 <connections>
-                                                                    <segue destination="LG0-RK-iRO" kind="presentation" id="anf-Vk-m9O"/>
+                                                                    <action selector="getMoreInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gU1-yD-Eyg"/>
+                                                                    <segue destination="MW4-gX-NKC" kind="presentation" id="cLH-DO-Fcy"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcJ-KW-Znt">
@@ -74,7 +75,8 @@
                                                                 <color key="tintColor" red="0.017747107893228531" green="0.15807852149009705" blue="0.28915739059448242" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="LabelButtonTwo"/>
                                                                 <connections>
-                                                                    <segue destination="LG0-RK-iRO" kind="presentation" id="zTc-Zf-Hcb"/>
+                                                                    <action selector="getMoreInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HVv-JN-jo7"/>
+                                                                    <segue destination="dHC-aT-KL7" kind="presentation" id="DTy-PN-wFP"/>
                                                                 </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wa4-8j-98L">
@@ -133,7 +135,8 @@
                                                                 <color key="tintColor" red="0.017747107889999999" green="0.15807852150000001" blue="0.28915739060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="LabelButtonThree"/>
                                                                 <connections>
-                                                                    <segue destination="LG0-RK-iRO" kind="presentation" id="CD4-u2-nOE"/>
+                                                                    <action selector="getMoreInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PpM-oC-kI9"/>
+                                                                    <segue destination="mxD-pG-InZ" kind="presentation" id="c2v-w7-mAh"/>
                                                                 </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Jx6-7S-YEE">
@@ -189,7 +192,8 @@
                                                                 <color key="tintColor" red="0.017747107889999999" green="0.15807852150000001" blue="0.28915739060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="LabelButtonFour"/>
                                                                 <connections>
-                                                                    <segue destination="LG0-RK-iRO" kind="presentation" id="aBs-SL-iNR"/>
+                                                                    <action selector="getMoreInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KQO-74-DK6"/>
+                                                                    <segue destination="arU-QC-LGJ" kind="presentation" id="rtc-AV-5DH"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aM-Dz-KFo">
@@ -364,53 +368,191 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-80" y="-196"/>
+            <point key="canvasLocation" x="-884" y="-198"/>
         </scene>
-        <!--moreInformation-->
-        <scene sceneID="kza-C5-aNI">
+        <!--moreInfoButton1-->
+        <scene sceneID="C8n-so-AfY">
             <objects>
-                <viewController title="moreInformation" id="LG0-RK-iRO" customClass="moreInfo" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="moreInfoButton1" id="MW4-gX-NKC" customClass="MIButton1Controller" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Y53-OM-LzH"/>
-                        <viewControllerLayoutGuide type="bottom" id="F4f-is-3Up"/>
+                        <viewControllerLayoutGuide type="top" id="5fW-iO-91t"/>
+                        <viewControllerLayoutGuide type="bottom" id="tlI-KS-uFo"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jbI-Rb-ceH">
+                    <view key="view" contentMode="scaleToFill" id="sR1-hD-53c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWo-41-EKQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kR4-7a-L2U">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="wId-MU-2ze"/>
+                                    <constraint firstAttribute="height" constant="45" id="uPe-05-G7t"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="webview_bar.png"/>
                                 <connections>
-                                    <action selector="dismiss:" destination="LG0-RK-iRO" eventType="touchUpInside" id="rc5-ub-8Z2"/>
+                                    <action selector="dism" destination="MW4-gX-NKC" eventType="touchUpInside" id="cBr-MA-nbf"/>
                                 </connections>
                             </button>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebw-ja-hxn">
-                                <rect key="frame" x="0.0" y="45" width="414" height="691"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ls8-h4-6hr">
+                                <rect key="frame" x="20" y="45" width="374" height="671"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" red="0.021077785640954971" green="0.15815523266792297" blue="0.28917583823204041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="F4f-is-3Up" firstAttribute="top" secondItem="ebw-ja-hxn" secondAttribute="bottom" id="8NM-Xy-G19"/>
-                            <constraint firstItem="TWo-41-EKQ" firstAttribute="top" secondItem="jbI-Rb-ceH" secondAttribute="top" id="Gue-an-aGg"/>
-                            <constraint firstItem="ebw-ja-hxn" firstAttribute="top" secondItem="TWo-41-EKQ" secondAttribute="bottom" id="Qsu-nO-TEH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ebw-ja-hxn" secondAttribute="trailing" constant="-20" id="Ssp-7B-9wJ"/>
-                            <constraint firstItem="TWo-41-EKQ" firstAttribute="leading" secondItem="jbI-Rb-ceH" secondAttribute="leading" id="ao3-Te-ZIW"/>
-                            <constraint firstItem="ebw-ja-hxn" firstAttribute="leading" secondItem="jbI-Rb-ceH" secondAttribute="leadingMargin" constant="-20" id="jjd-oc-MYG"/>
-                            <constraint firstAttribute="trailing" secondItem="TWo-41-EKQ" secondAttribute="trailing" id="uBz-cH-F6Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ls8-h4-6hr" secondAttribute="trailing" id="88h-Ym-lHh"/>
+                            <constraint firstItem="ls8-h4-6hr" firstAttribute="top" secondItem="kR4-7a-L2U" secondAttribute="bottom" id="Aar-w1-WQg"/>
+                            <constraint firstItem="ls8-h4-6hr" firstAttribute="leading" secondItem="sR1-hD-53c" secondAttribute="leadingMargin" id="MQj-DZ-0hF"/>
+                            <constraint firstItem="tlI-KS-uFo" firstAttribute="top" secondItem="ls8-h4-6hr" secondAttribute="bottom" constant="20" id="p7F-G2-Gcm"/>
+                            <constraint firstAttribute="trailing" secondItem="kR4-7a-L2U" secondAttribute="trailing" id="pn6-ue-kWP"/>
+                            <constraint firstItem="kR4-7a-L2U" firstAttribute="leading" secondItem="sR1-hD-53c" secondAttribute="leading" id="suM-os-SsP"/>
+                            <constraint firstItem="kR4-7a-L2U" firstAttribute="top" secondItem="sR1-hD-53c" secondAttribute="top" id="uZR-qG-21w"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="moreInfoDisplay" destination="ebw-ja-hxn" id="oRi-GN-HOk"/>
+                        <outlet property="moreInfo1" destination="ls8-h4-6hr" id="FsR-i3-vEs"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7yk-rA-ogH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zv4-pp-hf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="651" y="-193"/>
+            <point key="canvasLocation" x="-143" y="-198"/>
+        </scene>
+        <!--moreInfoButton2-->
+        <scene sceneID="7rn-r0-cjr">
+            <objects>
+                <viewController title="moreInfoButton2" id="dHC-aT-KL7" customClass="MIButton2ViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GOX-OV-6aZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="pK1-0V-v53"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zko-cg-FlZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAH-lA-M2i">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="oAt-0b-kIp"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="webview_bar.png"/>
+                                <connections>
+                                    <action selector="dismiss" destination="dHC-aT-KL7" eventType="touchUpInside" id="TC8-Lt-fEJ"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfI-Fj-LUj">
+                                <rect key="frame" x="20" y="45" width="374" height="671"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pK1-0V-v53" firstAttribute="top" secondItem="lfI-Fj-LUj" secondAttribute="bottom" constant="20" id="0ej-8O-yjf"/>
+                            <constraint firstItem="lfI-Fj-LUj" firstAttribute="top" secondItem="SAH-lA-M2i" secondAttribute="bottom" id="SS9-Od-OAp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lfI-Fj-LUj" secondAttribute="trailing" id="SeS-5R-J7o"/>
+                            <constraint firstItem="SAH-lA-M2i" firstAttribute="leading" secondItem="zko-cg-FlZ" secondAttribute="leading" id="bu0-Ew-h8k"/>
+                            <constraint firstItem="SAH-lA-M2i" firstAttribute="top" secondItem="zko-cg-FlZ" secondAttribute="top" id="e57-54-xT9"/>
+                            <constraint firstItem="lfI-Fj-LUj" firstAttribute="leading" secondItem="zko-cg-FlZ" secondAttribute="leadingMargin" id="fQa-ud-WyY"/>
+                            <constraint firstAttribute="trailing" secondItem="SAH-lA-M2i" secondAttribute="trailing" id="hix-Nf-DOG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="moreInfo2" destination="lfI-Fj-LUj" id="4zn-XG-rRC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KTY-DV-cM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509" y="-198"/>
+        </scene>
+        <!--moreInfoButton4-->
+        <scene sceneID="V6H-IL-f7g">
+            <objects>
+                <viewController title="moreInfoButton4" id="arU-QC-LGJ" customClass="MIButton4ViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GBE-nd-597"/>
+                        <viewControllerLayoutGuide type="bottom" id="L00-w0-99T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gu7-I7-qcH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwp-vH-FDc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="vr8-ha-UcI"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="webview_bar.png"/>
+                                <connections>
+                                    <action selector="dismiss" destination="arU-QC-LGJ" eventType="touchUpInside" id="ewG-WU-OL1"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rm-mz-aTk">
+                                <rect key="frame" x="20" y="45" width="374" height="671"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uwp-vH-FDc" firstAttribute="leading" secondItem="gu7-I7-qcH" secondAttribute="leading" id="6ZL-ee-ncA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Rm-mz-aTk" secondAttribute="trailing" id="97H-GD-P69"/>
+                            <constraint firstItem="8Rm-mz-aTk" firstAttribute="leading" secondItem="gu7-I7-qcH" secondAttribute="leadingMargin" id="H3M-Y0-7kQ"/>
+                            <constraint firstItem="L00-w0-99T" firstAttribute="top" secondItem="8Rm-mz-aTk" secondAttribute="bottom" constant="20" id="Hbp-px-OtU"/>
+                            <constraint firstItem="8Rm-mz-aTk" firstAttribute="top" secondItem="uwp-vH-FDc" secondAttribute="bottom" id="jfc-P5-oyn"/>
+                            <constraint firstItem="uwp-vH-FDc" firstAttribute="top" secondItem="gu7-I7-qcH" secondAttribute="top" id="wZX-tM-3KO"/>
+                            <constraint firstAttribute="trailing" secondItem="uwp-vH-FDc" secondAttribute="trailing" id="xIH-A0-6k6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="moreInfo4" destination="8Rm-mz-aTk" id="wmu-DX-Pxt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OyB-Aw-vx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509" y="448"/>
+        </scene>
+        <!--moreInfoButton3-->
+        <scene sceneID="s9f-hl-c55">
+            <objects>
+                <viewController title="moreInfoButton3" id="mxD-pG-InZ" customClass="MIButton3ViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jnM-fz-ZHo"/>
+                        <viewControllerLayoutGuide type="bottom" id="KNi-if-Dxp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B40-bz-KK6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="774-mQ-K0C">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="rmp-ri-Cjf"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="webview_bar.png"/>
+                                <connections>
+                                    <action selector="dismiss" destination="mxD-pG-InZ" eventType="touchUpInside" id="0lM-4b-GXv"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WnN-Kf-JfA">
+                                <rect key="frame" x="20" y="45" width="374" height="671"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WnN-Kf-JfA" firstAttribute="top" secondItem="774-mQ-K0C" secondAttribute="bottom" id="8lS-Y2-zuG"/>
+                            <constraint firstItem="WnN-Kf-JfA" firstAttribute="leading" secondItem="B40-bz-KK6" secondAttribute="leadingMargin" id="Jxx-I3-O7G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WnN-Kf-JfA" secondAttribute="trailing" id="Mrc-As-ebB"/>
+                            <constraint firstItem="774-mQ-K0C" firstAttribute="top" secondItem="B40-bz-KK6" secondAttribute="top" id="TF6-6c-Vjz"/>
+                            <constraint firstItem="774-mQ-K0C" firstAttribute="leading" secondItem="B40-bz-KK6" secondAttribute="leading" id="W37-hC-QQl"/>
+                            <constraint firstItem="KNi-if-Dxp" firstAttribute="top" secondItem="WnN-Kf-JfA" secondAttribute="bottom" constant="20" id="j2c-Zt-TH9"/>
+                            <constraint firstAttribute="trailing" secondItem="774-mQ-K0C" secondAttribute="trailing" id="xvw-cj-8SS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="moreInfo3" destination="WnN-Kf-JfA" id="JFX-uN-0np"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kJB-n6-u1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143" y="448"/>
         </scene>
     </scenes>
     <resources>
@@ -424,7 +566,4 @@
         <image name="up_half.png" width="158" height="229"/>
         <image name="webview_bar.png" width="1333" height="167"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="zTc-Zf-Hcb"/>
-    </inferredMetricsTieBreakers>
 </document>

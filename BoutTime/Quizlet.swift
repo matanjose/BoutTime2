@@ -54,29 +54,3 @@ func moveItemUpOne(from initialIndex: Int) {
 }
 
 
-
-//Old Code
-/*
-import Foundation
-import GameKit
-
-var quizlet: [HistoricEvent] = []
-var initialDatabase = masterDatabase
-
-func generateQuizlet() -> [HistoricEvent] {
-    while quizlet.count < 4 {
-        let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: initialDatabase.count)
-        let itemToApend = initialDatabase[randomNumber]
-        quizlet.append(itemToApend)
-        initialDatabase.remove(at: randomNumber)
-    }
-    return quizlet
-}
-
-func resetQuizlet() -> [HistoricEvent] {
-    quizlet = []
-    return quizlet
-}
-
-*/
-

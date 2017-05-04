@@ -35,6 +35,10 @@
 		820320DB1EB27828000BC0E5 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820320DA1EB27828000BC0E5 /* Database.swift */; };
 		8261E6311EBA576200A5E389 /* icon60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8261E6301EBA576200A5E389 /* icon60@3x.png */; };
 		8261E6331EBA852100A5E389 /* moreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261E6321EBA852100A5E389 /* moreInfo.swift */; };
+		8261E6531EBADFC200A5E389 /* MIButton1Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261E6521EBADFC200A5E389 /* MIButton1Controller.swift */; };
+		8261E6551EBADFE100A5E389 /* MIButton2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261E6541EBADFE100A5E389 /* MIButton2ViewController.swift */; };
+		8261E6571EBADFF900A5E389 /* MIButton3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261E6561EBADFF900A5E389 /* MIButton3ViewController.swift */; };
+		8261E6591EBAE00D00A5E389 /* MIButton4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261E6581EBAE00D00A5E389 /* MIButton4ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,10 @@
 		820320DA1EB27828000BC0E5 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		8261E6301EBA576200A5E389 /* icon60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon60@3x.png"; sourceTree = "<group>"; };
 		8261E6321EBA852100A5E389 /* moreInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = moreInfo.swift; sourceTree = "<group>"; };
+		8261E6521EBADFC200A5E389 /* MIButton1Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIButton1Controller.swift; sourceTree = "<group>"; };
+		8261E6541EBADFE100A5E389 /* MIButton2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIButton2ViewController.swift; sourceTree = "<group>"; };
+		8261E6561EBADFF900A5E389 /* MIButton3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIButton3ViewController.swift; sourceTree = "<group>"; };
+		8261E6581EBAE00D00A5E389 /* MIButton4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIButton4ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,10 @@
 				820320D81EB277B1000BC0E5 /* Quizlet.swift */,
 				820320DA1EB27828000BC0E5 /* Database.swift */,
 				820320A21EB27747000BC0E5 /* Main.storyboard */,
+				8261E6521EBADFC200A5E389 /* MIButton1Controller.swift */,
+				8261E6541EBADFE100A5E389 /* MIButton2ViewController.swift */,
+				8261E6561EBADFF900A5E389 /* MIButton3ViewController.swift */,
+				8261E6581EBAE00D00A5E389 /* MIButton4ViewController.swift */,
 				820320A51EB27747000BC0E5 /* Assets.xcassets */,
 				820320AA1EB27747000BC0E5 /* Info.plist */,
 			);
@@ -229,6 +241,10 @@
 				820320D91EB277B1000BC0E5 /* Quizlet.swift in Sources */,
 				8261E6331EBA852100A5E389 /* moreInfo.swift in Sources */,
 				820320A11EB27747000BC0E5 /* ViewController.swift in Sources */,
+				8261E6531EBADFC200A5E389 /* MIButton1Controller.swift in Sources */,
+				8261E6591EBAE00D00A5E389 /* MIButton4ViewController.swift in Sources */,
+				8261E6571EBADFF900A5E389 /* MIButton3ViewController.swift in Sources */,
+				8261E6551EBADFE100A5E389 /* MIButton2ViewController.swift in Sources */,
 				820320DB1EB27828000BC0E5 /* Database.swift in Sources */,
 				8203209F1EB27747000BC0E5 /* AppDelegate.swift in Sources */,
 			);
