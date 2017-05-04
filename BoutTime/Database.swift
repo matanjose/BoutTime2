@@ -26,25 +26,13 @@ struct HistoricEvent: Hashable, Equatable{
     }
 }
 
-let masterDatabase: [HistoricEvent] = [myBirthday, mcpBirthday, joshBirthday, mamiBirthday, papiBirthday, chuppiesBirthday]
+let masterDatabase: [HistoricEvent] = [oneEvent, twoEvent, threeEvent]
 
-let myBirthday = HistoricEvent(day: 2, month: 7, year: 1983, fact: "José was born", moreInfoURL: "https://www.google.com")
 
-let mcpBirthday = HistoricEvent(day: 9, month: 6, year: 1981, fact: "Maria Cristina was born", moreInfoURL: "https://www.yahoo.com")
+let oneEvent = HistoricEvent(day: 1, month: 8, year: 1928, fact: "The discovery of Penicillin", moreInfoURL: "https://en.wikipedia.org/wiki/History_of_penicillin")
+let twoEvent = HistoricEvent(day: 4, month: 12, year: 1796, fact: "British doctor Edward Jenner uses cowpox virus to make the first vaccine", moreInfoURL: "https://en.wikipedia.org/wiki/Vaccine#History")
+let threeEvent = HistoricEvent(day: 17, month: 12, year: 1903, fact: "The Wilbur brothers fly the first airplane in Kitty Hawk, N.C.", moreInfoURL: "https://en.wikipedia.org/wiki/History_of_aviation#The_Wright_brothers")
 
-let joshBirthday = HistoricEvent(day: 13, month: 8, year: 1983, fact: "Josh was born", moreInfoURL: "https://www.apple.com")
-
-let mamiBirthday = HistoricEvent(day: 17, month: 4, year: 1950, fact: "Mami was born", moreInfoURL: "https://www.nytimes.com")
-
-let papiBirthday = HistoricEvent(day: 21, month: 3, year: 1953, fact: "Papi was born", moreInfoURL: "https://news.google.com")
-
-let chuppiesBirthday = HistoricEvent(day: 1, month: 1, year: 2008, fact: "Chuppies was born", moreInfoURL: "https://www.wikipedia.org")
-/*
-let oneEvent = HistoricEvent(yearMonthDayYYYYMMDD: 1928, fact: "The discovery of penicillin.")
-
-let twoEvent = HistoricEvent(yearMonthDayYYYYMMDD: 1796, fact: "British doctor Edward Jenner uses cowpox virus to make the first vaccine.")
-
-let threeEvent = HistoricEvent(yearMonthDayYYYYMMDD: 1903, fact: "The Wilbur brothers fly the first airplane in Kitty Hawk.")
 
 let fourEvent = HistoricEvent(yearMonthDayYYYYMMDD: 1876, fact: "Alexander Graham Bell invented the telephone")
 
@@ -61,4 +49,15 @@ let nineEvent = HistoricEvent(yearMonthDayYYYYMMDD: 1669, fact: "Phosphorus is d
 let tenEvent = HistoricEvent(yearMonthDayYYYYMMDD: 1775, fact: "Magnesium is discovered.")
 
 let elevenEvent = HistoricEvent(yearMonthDayYYYYMMDD: 1789, fact: "Uranium")
+ let myBirthday = HistoricEvent(day: 2, month: 7, year: 1983, fact: "José was born", moreInfoURL: "https://www.google.com")
+/*
+ let mcpBirthday = HistoricEvent(day: 9, month: 6, year: 1981, fact: "Maria Cristina was born", moreInfoURL: "https://www.yahoo.com")
+ 
+ let joshBirthday = HistoricEvent(day: 13, month: 8, year: 1983, fact: "Josh was born", moreInfoURL: "https://www.apple.com")
+ 
+ let mamiBirthday = HistoricEvent(day: 17, month: 4, year: 1950, fact: "Mami was born", moreInfoURL: "https://www.nytimes.com")
+ 
+ let papiBirthday = HistoricEvent(day: 21, month: 3, year: 1953, fact: "Papi was born", moreInfoURL: "https://news.google.com")
+ 
+ let chuppiesBirthday = HistoricEvent(day: 1, month: 1, year: 2008, fact: "Chuppies was born", moreInfoURL: "https://www.wikipedia.org")
  */

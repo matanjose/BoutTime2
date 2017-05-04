@@ -19,7 +19,7 @@
  (•) create at least 40 events
  (X) game consists of exactly six rounds
  (X) each round is 60 seconds long
- (•) add success and failure sounds
+ (X) add success and failure sounds
  
  ---------------------
  EXCEEDS EXPECTATIONS
